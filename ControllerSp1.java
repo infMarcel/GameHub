@@ -10,6 +10,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.Parent;
+import java.io.IOException;
 
 public class ControllerSp1 {
 
@@ -32,6 +36,7 @@ public class ControllerSp1 {
     @FXML // fx:id="desctxt"
     private Text desctxt; // Value injected by FXMLLoader
     private Spiel sp;
+    private Stage stage;
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
@@ -41,8 +46,19 @@ public class ControllerSp1 {
         assert desctxt != null : "fx:id=\"desctxt\" was not injected: check your FXML file 'SI.fxml'.";
         
         bckbtn.setOnMouseReleased(e-> { 
-        Stage stage = (Stage) bckbtn.getScene().getWindow();
-        stage.close(); 
+        try{FXMLLoader loader = new FXMLLoader(getClass().getResource("view.fxml"));
+        Parent root = loader.load();
+        Controller contr = loader.getController();
+        contr.setStage(stage);
+
+        // Fenster erstellen und anzeigen
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        stage.setResizable(false);}
+        catch(IOException ex){
+            ex.printStackTrace();
+        }
     });
     
     }
@@ -50,5 +66,8 @@ public class ControllerSp1 {
         sp = sp_;
         desctxt.setText(sp.getBESCH());
         nametxt.setText(sp.getName());
+    }
+    public void setStage(Stage s){
+        stage = s;
     }
 }

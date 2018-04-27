@@ -17,8 +17,7 @@ import javafx.scene.layout.*;
 import javafx.scene.shape.*;
 import javafx.scene.paint.*;
 import java.util.*;
-public class Controller {
-    private boolean spge;
+public class Controller {    
     private ArrayList<Spiel> spiele;
     
     
@@ -39,6 +38,9 @@ public class Controller {
 
     @FXML // fx:id="pane4"
     private Pane pane4; // Value injected by FXMLLoader
+    
+    private Stage stage;
+    
 
     @FXML
     void startSpiel1(MouseEvent event) {
@@ -56,37 +58,39 @@ public class Controller {
         spiele.add(new PacDude());        
         pane1.setOnMouseClicked(e -> starteSpiel(spiele.get(0)));
         pane2.setOnMouseClicked(e -> starteSpiel(spiele.get(1)));
-        spge = false ; 
+         
         
     }
 
     public void starteSpiel(Spiel spiel)
-    {   if(spge == false){   
-            try{
+    {     
+            
+        
+        try{
 
                FXMLLoader loader = new FXMLLoader(getClass().getResource("SI.fxml"));
                Parent root = loader.load();
                ControllerSp1 cosp = loader.getController();
                cosp.setSpiel(spiel);
-                Stage stage2 = new Stage();                                    
+               cosp.setStage(stage);
                 Scene scene = new Scene(root);           
-                stage2.setTitle(spiel.getName());
-                stage2.setScene(scene);
-                stage2.show();
-                stage2.setResizable(false);                
-                spge = false;
-                stage2.setOnShowing(new EventHandler<WindowEvent>(){
-                    public void handle(WindowEvent we) {
-                            spge = true;
-                        }
-                });
+                stage.setTitle(spiel.getName());
+                stage.setScene(scene);
+                stage.show();
+                stage.setResizable(false);                
+                }
                 
-            } catch(Exception ex)
+             catch(Exception ex)
             {
                 System.out.println("Problem beim Starten des Fensters");
             }
-        }       
-    }
+        } 
+        
+        public void setStage(Stage s){
+            stage = s;
+        }
+    }     
+    
     
     /*public void starteSpiel(int spNU){
         boolean spge = true;
@@ -137,4 +141,4 @@ public class Controller {
          break;   
         }
     }*/
-}
+
