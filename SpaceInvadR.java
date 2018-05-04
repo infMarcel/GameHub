@@ -17,7 +17,7 @@ public class SpaceInvadR extends Spiel
     
     }
     
-    public void starten()
+    public void start()
     {
         Stage stage = new Stage(); 
         spielSteuerung = new Spielsteuerung();

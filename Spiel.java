@@ -4,6 +4,7 @@ public class Spiel
 {  
     protected String name ;
     protected String beschreibung;
+    
     public Spiel()
     {}
         
@@ -13,4 +14,5 @@ public class Spiel
     public String getBESCH(){
      return beschreibung;   
     }
+    public void start(){}
 }

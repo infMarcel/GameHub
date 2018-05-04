@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
 import java.io.IOException;
+import javafx.event.ActionEvent;
 
 public class ControllerSp1 {
 
@@ -60,7 +61,7 @@ public class ControllerSp1 {
             ex.printStackTrace();
         }
     });
-    
+        
     }
     public void setSpiel(Spiel sp_ ){
         sp = sp_;
@@ -69,5 +70,11 @@ public class ControllerSp1 {
     }
     public void setStage(Stage s){
         stage = s;
+    }
+    
+    
+    @FXML public void start(ActionEvent event)
+    {
+        sp.start();
     }
 }
