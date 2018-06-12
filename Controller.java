@@ -53,21 +53,23 @@ public class Controller {
         assert pane2 != null : "fx:id=\"pane2\" was not injected: check your FXML file 'view.fxml'.";
         assert pane3 != null : "fx:id=\"pane3\" was not injected: check your FXML file 'view.fxml'.";
         assert pane4 != null : "fx:id=\"pane4\" was not injected: check your FXML file 'view.fxml'.";
-        spiele  = new ArrayList<Spiel>();
+        //Spieleliste erstellen
+        spiele  = new ArrayList<Spiel>();       
         spiele.add(new SpaceInvadR());
-        spiele.add(new PacDude());        
-        pane1.setOnMouseClicked(e -> starteSpiel(spiele.get(0)));
-        pane2.setOnMouseClicked(e -> starteSpiel(spiele.get(1)));
+        spiele.add(new PacDude()); 
+        //Öffnet ein anderes Fenster wenn das Pane geklickt wird
+        pane1.setOnMouseClicked(e -> starteFenster(spiele.get(0)));
+        pane2.setOnMouseClicked(e -> starteFenster(spiele.get(1)));
          
         
     }
 
-    public void starteSpiel(Spiel spiel)
+    public void starteFenster(Spiel spiel)
     {     
             
         
         try{
-
+               //Wechseln auf das andere Fenster
                FXMLLoader loader = new FXMLLoader(getClass().getResource("SI.fxml"));
                Parent root = loader.load();
                ControllerSp1 cosp = loader.getController();

@@ -64,6 +64,7 @@ public class ControllerSp1 {
         
     }
     public void setSpiel(Spiel sp_ ){
+        //Updaten des Spieles und der Textfelder
         sp = sp_;
         desctxt.setText(sp.getBESCH());
         nametxt.setText(sp.getName());
