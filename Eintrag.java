@@ -10,6 +10,12 @@ public class Eintrag
        name = name_;
        score = score_;
     }
-
     
+    public String getName(){
+     return name   ;
+    }
+    
+    public int getScore(){
+     return score;   
+    }
 }
