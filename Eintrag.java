@@ -1,6 +1,6 @@
 
-
-public class Eintrag
+import java.io.*;
+public class Eintrag implements Serializable
 {
     private String name;
     private int score;

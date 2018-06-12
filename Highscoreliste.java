@@ -1,5 +1,6 @@
  import java.util.ArrayList;
-public class Highscoreliste
+ import java.io.*;
+public class Highscoreliste implements Serializable
 {
     private ArrayList<Eintrag> Spieler = new ArrayList<Eintrag>();
     public Highscoreliste()
@@ -7,8 +8,16 @@ public class Highscoreliste
     }
 
     public void Listespeichern(){
+        try{
+            FileOutputStream fs = new FileOutputStream("liste.ser");
+            ObjectOutputStream os = new ObjectOutputStream(fs);
+            os.writeObject(Spieler);
+            os.close();
         
-        
+        }
+        catch(Exception ex){
+            System.out.println("Fehler beim Laden");
+        }
     }
     
     public void Listeladen(){
