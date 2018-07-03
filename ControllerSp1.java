@@ -68,8 +68,9 @@ public class ControllerSp1 {
         sp = sp_;
         desctxt.setText(sp.getBESCH());
         nametxt.setText(sp.getName());
-        /*for(int a = 0 ; a<=9 ; a++){
-        highsclist. 
+        highsclist = new ListView<String>();
+        /*for(int a = 0 ; a >= 9 ; a++){
+            highsclist.add(sp.getName(a) +" ||"+ sp.getScore(a));
         }*/
    }
     public void setStage(Stage s){
