@@ -57,10 +57,13 @@ public class Controller {
         spiele  = new ArrayList<Spiel>();       
         spiele.add(new SpaceInvadR());
         spiele.add(new PacDude()); 
+        spiele.add(new Sneek());
+        spiele.add(new Hong());
         //Öffnet ein anderes Fenster wenn das Pane geklickt wird
         pane1.setOnMouseClicked(e -> starteFenster(spiele.get(0)));
         pane2.setOnMouseClicked(e -> starteFenster(spiele.get(1)));
-         
+        pane3.setOnMouseClicked(e -> starteFenster(spiele.get(2))); 
+        pane4.setOnMouseClicked(e -> starteFenster(spiele.get(3)));
         
     }
 

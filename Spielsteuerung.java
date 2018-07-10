@@ -346,7 +346,7 @@ public class Spielsteuerung
     {
         if (ke.getCode() == KeyCode.X)
         {
-            Platform.exit();
+            //Platform.exit();
         }
 
         if (ke.getCode() == KeyCode.LEFT)
