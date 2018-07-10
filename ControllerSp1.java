@@ -15,33 +15,75 @@ import javafx.scene.Scene;
 import javafx.scene.Parent;
 import java.io.IOException;
 import javafx.event.ActionEvent;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 
 public class ControllerSp1 {
-
-    @FXML // ResourceBundle that was given to the FXMLLoader
+    @FXML
     private ResourceBundle resources;
-
-    @FXML // URL location of the FXML file that was given to the FXMLLoader
+    @FXML
     private URL location;
-
-    @FXML // fx:id="highsclist"
-    private ListView<?> highsclist; // Value injected by FXMLLoader
-
-    @FXML // fx:id="startbtn"
-    private Button startbtn; // Value injected by FXMLLoader
-
-    @FXML // fx:id="bckbtn"
-    private Button bckbtn; // Value injected by FXMLLoader
+    @FXML
+    private Button startbtn;
+    @FXML
+    private Button bckbtn;
+    @FXML
+    private Text desctxt;
     @FXML
     private Text nametxt;
-    @FXML // fx:id="desctxt"
-    private Text desctxt; // Value injected by FXMLLoader
+    @FXML
+    private Label score1;
+    @FXML
+    private Label player1;
+    @FXML
+    private Label player3;
+    @FXML
+    private Label player2;
+    @FXML
+    private Label player4;
+    @FXML
+    private Label player5;
+    @FXML
+    private Label player6;
+    @FXML
+    private Label player0;
+    @FXML
+    private Label player7;
+    @FXML
+    private Label player8;
+    @FXML
+    private Label player9;
+    @FXML
+    private Label score0;
+    @FXML
+    private Label score2;
+    @FXML
+    private Label score3;
+    @FXML
+    private Label score4;
+    @FXML
+    private Label score5;
+    @FXML
+    private Label score6;
+    @FXML
+    private Label score7;
+    @FXML
+    private Label score8;
+    @FXML
+    private Label score9;
+    @FXML
+    private Button playbtn;    
     private Spiel sp;
     private Stage stage;
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
-        assert highsclist != null : "fx:id=\"highsclist\" was not injected: check your FXML file 'SI.fxml'.";
+       
         assert startbtn != null : "fx:id=\"startbtn\" was not injected: check your FXML file 'SI.fxml'.";
         assert bckbtn != null : "fx:id=\"bckbtn\" was not injected: check your FXML file 'SI.fxml'.";
         assert desctxt != null : "fx:id=\"desctxt\" was not injected: check your FXML file 'SI.fxml'.";
@@ -68,7 +110,7 @@ public class ControllerSp1 {
         sp = sp_;
         desctxt.setText(sp.getBESCH());
         nametxt.setText(sp.getName());
-        highsclist = new ListView<String>();        
+               
    }
     public void setStage(Stage s){
         stage = s;
