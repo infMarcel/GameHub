@@ -27,4 +27,7 @@ public class Spiel
     public String getName(int a){
         return hisclist.getName(a);
     }
+    public void addtoHighscorelist(int score , String name){
+        hisclist.Spielerhinzufügen(new Eintrag(name,score));
+    }
 }

@@ -281,6 +281,7 @@ public class Spielsteuerung
             schiff.unsichtbarMachen();
             timer.stop();
             symbolErstellen();
+            scorespeichern();
         }
 
         //updated den Score auf der Oberfläche
@@ -400,5 +401,7 @@ public class Spielsteuerung
     {
         return flaeche;
     }
-
+    public void scorespeichern(){
+        
+    }
 }

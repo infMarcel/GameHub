@@ -88,6 +88,7 @@ public class Controller {
              catch(Exception ex)
             {
                 System.out.println("Problem beim Starten des Fensters");
+                    ex.printStackTrace();
             }
         } 
         

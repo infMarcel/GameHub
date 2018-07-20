@@ -22,6 +22,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
+import java.util.*;
 
 public class ControllerSp1 {
     @FXML
@@ -80,6 +81,8 @@ public class ControllerSp1 {
     private Button playbtn;    
     private Spiel sp;
     private Stage stage;
+    private ArrayList<Label> scores;
+    private ArrayList<Label> players;
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
@@ -87,7 +90,28 @@ public class ControllerSp1 {
         assert startbtn != null : "fx:id=\"startbtn\" was not injected: check your FXML file 'SI.fxml'.";
         assert bckbtn != null : "fx:id=\"bckbtn\" was not injected: check your FXML file 'SI.fxml'.";
         assert desctxt != null : "fx:id=\"desctxt\" was not injected: check your FXML file 'SI.fxml'.";
-        
+        scores = new ArrayList<Label>();
+        players = new ArrayList<Label>();
+        scores.add(score0);
+        scores.add(score1);
+        scores.add(score2);
+        scores.add(score3);
+        scores.add(score4);
+        scores.add(score5);
+        scores.add(score6);
+        scores.add(score7);
+        scores.add(score8);
+        scores.add(score9);
+        players.add(player0);
+        players.add(player1);
+        players.add(player2);
+        players.add(player3);
+        players.add(player4);
+        players.add(player5);
+        players.add(player6);
+        players.add(player7);
+        players.add(player8);
+        players.add(player9);
         bckbtn.setOnMouseReleased(e-> { 
         try{FXMLLoader loader = new FXMLLoader(getClass().getResource("view.fxml"));
         Parent root = loader.load();
@@ -110,6 +134,10 @@ public class ControllerSp1 {
         sp = sp_;
         desctxt.setText(sp.getBESCH());
         nametxt.setText(sp.getName());
+        for(int a = 0 ; a<= 9 ; a++){
+            scores.get(a).setText(""+sp.getScore(a));
+            players.get(a).setText(sp.getName(a));
+        }
                
    }
     public void setStage(Stage s){
