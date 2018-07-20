@@ -45,8 +45,32 @@
                      </font>
                   </Text>
                </children></Pane>
-            <Pane fx:id="pane3" onMouseReleased="#startSpiel1" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: grey;" />
-            <Pane fx:id="pane4" onMouseReleased="#startSpiel1" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: grey;" />
+            <Pane fx:id="pane3" onMouseReleased="#startSpiel1" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: grey;">
+               <children>
+                  <ImageView fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Snek.jpg" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#ffcc2a" layoutX="19.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LongeDudes">
+                     <font>
+                        <Font name="Arial Bold" size="35.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <Pane fx:id="pane4" onMouseReleased="#startSpiel1" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: grey;">
+               <children>
+                  <ImageView fitHeight="250.0" fitWidth="250.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Hong.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#ffcc2a" layoutX="80.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hong">
+                     <font>
+                        <Font name="Arial Bold" size="35.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
          </children>
       </FlowPane>
    </children>
